@@ -347,3 +347,4 @@ const submitDetails = submitUserDetailsButton.addEventListener(
     }
   }
 );
+console.log('git test');
