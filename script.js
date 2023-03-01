@@ -8,6 +8,7 @@ const signupCreateButton = document.querySelector('.btn-signup-create'); //login
 const signinLogoutButton = document.querySelector('.btn-signin-logout'); //logoutAccountAfterSignup
 const logoutButton = document.querySelector('.btn-logout'); //logoutAccount
 const submitUserDetailsButton = document.querySelector('.btn-edit-user-submit'); //submitDetails
+const closeUserDetailsButton = document.querySelector('.btn-close-user-submit'); //submitDetailsClose
 
 //section selection
 const signinSection = document.querySelector('.signin-section');
@@ -16,6 +17,7 @@ const usernameSection = document.querySelector('.username-section');
 const userlistSection = document.querySelector('.userlist-section');
 const editUserSection = document.querySelector('.edit-user-section');
 const formReset = document.querySelector('.form-reset');
+const navbarSection = document.querySelector('.navbar-section');
 
 //innerhtml selection
 const labelLoginCheck = document.querySelector('.login-check');
@@ -41,6 +43,8 @@ let localStorageArray = [];
 let getLocalStorage = function () {
   data = JSON.parse(localStorage.getItem('userdata'));
   // console.log(data);
+  //or
+  // data = JSON.parse(localStorage.getItem('userdata')) || '[]';   then no need to write if (!data) return;
 
   if (!data) return;
 
@@ -121,6 +125,7 @@ const loginAccount = signinButton.addEventListener('click', function () {
     usernameSection.classList.remove('hidden');
     userlistSection.classList.remove('hidden');
     editUserSection.classList.add('hidden');
+    navbarSection.classList.remove('hidden');
 
     let htmlusername = `
     <Section >
@@ -155,6 +160,7 @@ const createAccount = signupButton.addEventListener('click', function () {
   usernameSection.classList.add('hidden');
   userlistSection.classList.add('hidden');
   editUserSection.classList.add('hidden');
+  navbarSection.classList.add('hidden');
 });
 
 //user signin account logic
@@ -212,6 +218,7 @@ const logoutAccountAfterSignin = signinLogoutButton.addEventListener(
     usernameSection.classList.add('hidden');
     userlistSection.classList.add('hidden');
     editUserSection.classList.add('hidden');
+    navbarSection.classList.add('hidden');
 
     location.reload();
   }
@@ -225,6 +232,7 @@ const logoutAccount = logoutButton.addEventListener('click', function () {
   usernameSection.classList.add('hidden');
   userlistSection.classList.add('hidden');
   editUserSection.classList.add('hidden');
+  navbarSection.classList.add('hidden');
 
   location.reload();
 });
@@ -269,6 +277,7 @@ const editBtn = function (index) {
   usernameSection.classList.add('hidden');
   userlistSection.classList.add('hidden');
   editUserSection.classList.remove('hidden');
+  navbarSection.classList.remove('hidden');
 
   //show user details in editusersection as placeholder
   let currentObject = localStorageArray[index];
@@ -325,6 +334,7 @@ const submitDetails = submitUserDetailsButton.addEventListener(
       usernameSection.classList.remove('hidden');
       userlistSection.classList.remove('hidden');
       editUserSection.classList.add('hidden');
+      navbarSection.classList.remove('hidden');
 
       getLocalStorage();
       // console.log(localStorageArray);
@@ -345,5 +355,17 @@ const submitDetails = submitUserDetailsButton.addEventListener(
     } else {
       formSubmitCheckEditUser.textContent = `Please fill all require details!`;
     }
+  }
+);
+
+const submitDetailsClose = closeUserDetailsButton.addEventListener(
+  'click',
+  function () {
+    signinSection.classList.add('hidden');
+    signupSection.classList.add('hidden');
+    usernameSection.classList.remove('hidden');
+    userlistSection.classList.remove('hidden');
+    editUserSection.classList.add('hidden');
+    navbarSection.classList.remove('hidden');
   }
 );
