@@ -19,33 +19,27 @@
 
 </head>
 
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
 
-  <div class="container-fluid">
+<body style="background-color: antiquewhite;">
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-      </ul>
-
-      <form class="d-flex" role="search">
-        <button class="btn btn-outline-success btn-logout" type="submit">Logout</button>
-      </form>
-
-    </div>
-  </div>
-</nav>
-
-<body>
+  <section class="navbar-section hidden">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          </ul>
+          <form class="d-flex" role="search">
+            <button class="btn btn-outline-success btn-logout" type="submit">Logout</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+  </section>
 
   <div class="container">
+
     <!-- section01 start -->
-    <section class="h-100 gradient-form signin-section" style="background-color: #eee;">
+    <section class="h-100 gradient-form signin-section mt-4" style="background-color: #eee;">
       <div class="container py-5 h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
           <div class="col-xl-10">
@@ -107,7 +101,7 @@
     </section>
     <!-- section01 end -->
     <!-- section02 start -->
-    <section class="h-100 gradient-form signup-section hidden" style="background-color: #eee;">
+    <section class="h-100 gradient-form signup-section hidden mt-4" style="background-color: #eee;">
       <div class="container py-5 h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
           <div class="col-xl-10">
@@ -186,7 +180,10 @@
     </section>
     <!-- hidden02 end -->
     <!-- section03 start -->
-    <section class="h-100 gradient-form edit-user-section hidden" style="background-color: #eee;">
+    <section class="h-100 gradient-form edit-user-section hidden mt-4" style="background-color: #eee;">
+      <button type="button" class="close btn-close-user-submit" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
       <div class="container py-5 h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
           <div class="col-xl-10">
@@ -245,7 +242,7 @@
     <!-- section03 end -->
 
     <!-- section04 start -->
-    <div class='username-section fw-bold'>
+    <div class='username-section fw-bold mt-4'>
       <!-- <Section class='hidden username-section'>
       <div class="alert alert-primary" role="alert">
         Welcome Angella!
@@ -255,7 +252,7 @@
     <!-- section04 end -->
 
     <!-- section05 start -->
-    <div class='userlist-section'>
+    <div class='userlist-section mt-4'>
       <!-- <Section class='hidden userlist-section'>
       <div class="row">
         <div class="col">
