@@ -1,5 +1,6 @@
 'use strict';
 //html homepage from https://mdbootstrap.com/docs/standard/extended/login/
+//test
 
 //button selection
 const signinButton = document.querySelector('.btn-signin'); //loginAccount
